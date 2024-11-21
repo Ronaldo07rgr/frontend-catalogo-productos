@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "id": 1, "name": "Producto A", "price": 100, "stock": 50 },
+    { "id": 2, "name": "Producto B", "price": 200, "stock": 30 }
+  ],
+  "orders": [
+    { "id": 1, "customer": "Cliente 1", "total": 300, "date": "2024-11-20" },
+    { "id": 2, "customer": "Cliente 2", "total": 500, "date": "2024-11-19" }
+  ]
+}

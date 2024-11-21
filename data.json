@@ -1,0 +1,11 @@
+{
+    "products": [
+      { "id": 1, "name": "CocaCola", "price": 1700, "stock": 50 },
+      { "id": 2, "name": "Pepsi", "price": 1500, "stock": 30 }
+    ],
+    "orders": [
+      { "id": 1, "productId": 1, "quantity": 2 },
+      { "id": 2, "productId": 2, "quantity": 1 }
+    ]
+  }
+  
