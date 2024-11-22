@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaHome, FaBox, FaClipboardList } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaBox,
+  FaClipboardList,
+} from "react-icons/fa";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,11 +21,19 @@ function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="text-3xl font-extrabold tracking-wider relative group"
+          className="flex items-center space-x-3 text-3xl font-extrabold tracking-wider relative group"
         >
-<h4 className="text-2xl font-bold text-white tracking-wide hover:text-blue-400 transition-all duration-300">
-              Gestión de Catálogo
-            </h4>
+          {/* Icono o Imagen del Logo */}
+          <img
+            src="/logo.ico"
+            alt="Logo"
+            className="w-16 h-16 object-contain"
+          />
+
+          {/* Texto del Logo */}
+          <h4 className="text-2xl font-bold text-white tracking-wide hover:text-blue-400 transition-all duration-300">
+            Gestión de Catálogo
+          </h4>
           <div className="absolute -bottom-1 left-0 w-0 h-1 bg-cyan-400 transition-all duration-300"></div>
         </Link>
 
@@ -43,7 +57,11 @@ function Navbar() {
         >
           <ul className="md:flex md:space-x-8">
             {[
-              { name: "Inicio", to: "/", icon: <FaHome className="inline mr-2" /> },
+              {
+                name: "Inicio",
+                to: "/",
+                icon: <FaHome className="inline mr-2" />,
+              },
               {
                 name: "Productos",
                 to: "/products",
