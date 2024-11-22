@@ -65,4 +65,4 @@ Puedes previsualizar la versión de producción ejecutando:
 
 La aplicación está disponible en línea y puede probarse accediendo al siguiente enlace:
 
-🔗 Gestión de Catálogo - Despliegue en Vercel https://frontend-catalogo-productos.vercel.app/products
+🔗 Gestión de Catálogo - Despliegue en Vercel [https://frontend-catalogo-productos.vercel.app/products](https://frontend-catalogo-productos.vercel.app/)
