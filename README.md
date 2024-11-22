@@ -33,7 +33,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
 Clona este repositorio en tu máquina local:
 
-git clone https://github.com/tu-usuario/gestion-de-catalogo.git
+git clone https://github.com/Ronaldo07rgr/frontend-catalogo-productos.git
 cd gestion-de-catalogo
 
 ### Paso 2: Instalar dependencias
@@ -65,4 +65,4 @@ Puedes previsualizar la versión de producción ejecutando:
 
 La aplicación está disponible en línea y puede probarse accediendo al siguiente enlace:
 
-🔗 Gestión de Catálogo - Despliegue en Vercel
+🔗 Gestión de Catálogo - Despliegue en Vercel https://frontend-catalogo-productos.vercel.app/products
