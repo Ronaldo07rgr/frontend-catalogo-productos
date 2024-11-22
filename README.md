@@ -60,3 +60,9 @@ Previsualizar el build de producción
 Puedes previsualizar la versión de producción ejecutando:
 
 "npm run preview"
+
+### Paso 4: Despliegue
+
+La aplicación está disponible en línea y puede probarse accediendo al siguiente enlace:
+
+🔗 Gestión de Catálogo - Despliegue en Vercel
