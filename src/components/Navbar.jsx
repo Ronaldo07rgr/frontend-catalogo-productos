@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaBars, FaTimes, FaHome, FaBox, FaClipboardList } from "react-icons/fa";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,65 +10,68 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-blue-600 text-white shadow-lg">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        {/* Logo o título */}
+    <nav className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 text-white shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+        {/* Logo */}
         <Link
           to="/"
-          className="text-lg font-bold hover:text-blue-300 transition-all duration-300 ease-in-out"
+          className="text-3xl font-extrabold tracking-wider relative group"
         >
-          Gestión de Catálogo
+<h4 className="text-2xl font-bold text-white tracking-wide hover:text-blue-400 transition-all duration-300">
+              Gestión de Catálogo
+            </h4>
+          <div className="absolute -bottom-1 left-0 w-0 h-1 bg-cyan-400 transition-all duration-300"></div>
         </Link>
 
-        {/* Botón del menú hamburguesa (visible solo en pantallas pequeñas) */}
+        {/* Botón de menú hamburguesa */}
         <button
           onClick={toggleMenu}
-          className="block md:hidden focus:outline-none transition-transform duration-300 ease-in-out transform"
+          className="block md:hidden text-white focus:outline-none flex items-center"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`h-6 w-6 ${isMenuOpen ? "rotate-90" : ""}`}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d={
-                isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
-              }
-            />
-          </svg>
+          {isMenuOpen ? (
+            <FaTimes className="h-6 w-6 animate-pulse transition-transform duration-300 transform rotate-180" />
+          ) : (
+            <FaBars className="h-6 w-6 animate-pulse transition-transform duration-300 transform rotate-0" />
+          )}
         </button>
 
-        {/* Menú de enlaces */}
+        {/* Menú */}
         <div
           className={`${
             isMenuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-          } md:opacity-100 md:max-h-full overflow-hidden transition-all duration-300 ease-in-out absolute top-16 left-0 w-full bg-blue-600 md:static md:flex md:w-auto md:space-x-8 text-center`}
+          } md:opacity-100 md:max-h-full overflow-hidden transition-all duration-500 ease-in-out absolute md:relative left-0 top-full w-full bg-blue-700 md:bg-transparent md:flex md:w-auto text-center z-50`}
         >
-          <Link
-            to="/"
-            className="block px-4 py-2 md:inline-block hover:bg-blue-700 hover:text-blue-300 rounded-3xl transition-all duration-300 ease-in-out"
-          >
-            Inicio
-          </Link>
-          <Link
-            to="/products"
-            className="block px-4 py-2 md:inline-block hover:bg-blue-700 hover:text-blue-300 rounded-3xl transition-all duration-300 ease-in-out"
-          >
-            Productos
-          </Link>
-          <Link
-            to="/orders"
-            className="block px-4 py-2 md:inline-block hover:bg-blue-700 hover:text-blue-300 rounded-3xl transition-all duration-300 ease-in-out"
-          >
-            Pedidos
-          </Link>
+          <ul className="md:flex md:space-x-8">
+            {[
+              { name: "Inicio", to: "/", icon: <FaHome className="inline mr-2" /> },
+              {
+                name: "Productos",
+                to: "/products",
+                icon: <FaBox className="inline mr-2" />,
+              },
+              {
+                name: "Pedidos",
+                to: "/orders",
+                icon: <FaClipboardList className="inline mr-2" />,
+              },
+            ].map((item, index) => (
+              <li key={index} className="my-2 md:my-0">
+                <Link
+                  to={item.to}
+                  className="relative block px-6 py-2 text-lg font-semibold rounded-lg hover:bg-blue-800 md:hover:bg-blue-600 hover:text-cyan-200 transition-all duration-300 group"
+                >
+                  {item.icon}
+                  {item.name}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full"></div>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
+
+      {/* Separador */}
+      <div className="h-1 bg-gradient-to-r from-cyan-400 to-blue-600"></div>
     </nav>
   );
 }

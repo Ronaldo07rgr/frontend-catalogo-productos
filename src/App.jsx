@@ -1,25 +1,36 @@
-// App.jsx
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Orders from './pages/Orders';
 import Navbar from './components/Navbar';
 
 function App() {
-  const location = useLocation(); // Obtiene la ubicación actual para la transición
+  const location = useLocation();
 
   return (
     <div>
-      <Navbar /> {/* Navbar debe estar fuera de las rutas */}
-      
-      {/* TransitionGroup maneja las transiciones entre rutas */}
+      <Navbar />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <TransitionGroup>
         <CSSTransition
-          key={location.key} // El identificador de cada cambio de ruta
-          classNames="fade" // Clases CSS para la animación
-          timeout={300} // Duración de la animación
+          key={location.key}
+          classNames="fade"
+          timeout={300}
         >
           <div className="transition-container">
             <Routes location={location}>
